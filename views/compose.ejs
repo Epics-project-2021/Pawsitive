@@ -1,0 +1,80 @@
+<%- include("partials/header-feed"); -%>
+<!-- section get in touch start -->
+<div class="touch_section" id="contact">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <h1 class="get_taital">
+          <strong
+            ><span style="color: rgb(0, 0, 0)">DOG IN</span> NEED ?</strong
+          >
+        </h1>
+      </div>
+    </div>
+    <div class="email_box">
+      <div class="input_main">
+        <div class="container">
+          <form action="/action_page.php">
+            <div class="form-group">
+              <input
+                type="text"
+                class="email-bt"
+                placeholder="Name"
+                name="Name"
+              />
+            </div>
+            <div class="form-group">
+              <input
+                type="text"
+                class="email-bt"
+                placeholder="Your Phone Number"
+                name="Name"
+              />
+            </div>
+
+            <div class="dropdown">
+              <button class="dropbtn">Requirement</button>
+              <div class="dropdown-content">
+                <a href="#">Food</a>
+                <a href="#">Medication</a>
+                <a href="#">Adoption</a>
+              </div>
+            </div>
+            <div class="form-group">
+              <textarea
+                style="margin-top: 30px"
+                class="location-bt"
+                placeholder="Area Location"
+                id="location"
+                name="Location"
+              ></textarea>
+            </div>
+
+            <div class="form-group">
+              <textarea
+                style="margin-top: 10px"
+                class="massage-bt"
+                placeholder="Comment"
+                rows="5"
+                id="comment"
+                name="Comment"
+              ></textarea>
+            </div>
+            <form action="/action_page.php">
+              <label for="img">Select image:</label>
+              <input type="file" id="img" name="img" accept="image/*" />
+            </form>
+          </form>
+        </div>
+        <div class="send_btn">
+          <button type="button" class="main_bt">
+            <a style="color: white" href="#">Send</a>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- section get in touch end -->
+<%- include("partials/footer"); -%>
