@@ -1,6 +1,6 @@
 const express = require('express');
 const ejs = require('ejs');
-
+//created app
 const app = express();
 
 //Setting up ejs views
