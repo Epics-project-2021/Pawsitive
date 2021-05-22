@@ -1,5 +1,6 @@
 const express = require('express');
 const ejs = require('ejs');
+const connectDB = require('./database/db')
 
 const app = express();
 
@@ -27,6 +28,12 @@ app.use('/edit', require('./routes/edit'));
 
 //Starting the server
 let PORT = process.env.PORT || 3000;
-app.listen(PORT, function (req, res) {
-    console.log('Server is running at port 3000');
-});
+// app.listen(PORT, function (req, res) {
+//     console.log('Server is running at port 3000');
+// });
+
+connectDB().then(()=>{
+    app.listen(PORT, ()=>{
+        console.log(`Server started on ${PORT}`)
+    });
+})
