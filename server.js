@@ -1,7 +1,7 @@
 const express = require('express');
 const ejs = require('ejs');
 const connectDB = require('./database/db')
-
+// created app
 const app = express();
 
 //Setting up ejs views
