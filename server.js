@@ -7,7 +7,7 @@ const cookieParser = require('cookie-parser');
 var MemoryStore = require('memorystore')(session);
 const passport = require('passport');
 require('./auth/passportLocal')(passport);
-// require('./auth/googleAuth')(passport);
+require('./auth/googleAuth')(passport);
 
 const app = express();
 //Setting up ejs views

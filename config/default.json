@@ -1,4 +1,6 @@
 {
     "mongoURI": "mongodb+srv://abhaygupta15153986:abhaygupta15153986@cluster0.yctic.mongodb.net/Pawsitive?retryWrites=true&w=majority",
-    "secret": "SECRET=Gitaisthewisdom"
+    "secret": "SECRET=Gitaisthewisdom",
+    "GOOGLE_CLIENT_ID": "835563235598-qonmg5chev9pe18l3sj1eerkddjg9o9a.apps.googleusercontent.com",
+    "GOOGLE_CLIENT_SECRET": "lq3UM5pdKYf-dxtJfrypqtA9"
 }
