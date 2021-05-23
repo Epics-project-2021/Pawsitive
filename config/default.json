@@ -1,3 +1,4 @@
 {
-    "mongoURI": "mongodb+srv://sarthakf204:sarthakf204@cluster0.yctic.mongodb.net/Pawsitive?retryWrites=true&w=majority"
+    "mongoURI": "mongodb+srv://abhaygupta15153986:abhaygupta15153986@cluster0.yctic.mongodb.net/Pawsitive?retryWrites=true&w=majority",
+    "secret": "SECRET=Gitaisthewisdom"
 }
