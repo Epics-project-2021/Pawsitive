@@ -1,20 +1,43 @@
 const express = require('express');
 const ejs = require('ejs');
-const connectDB = require('./database/db')
-const app = express();
+const connectDB = require('./database/db');
+const config = require('config');
+const session = require('express-session');
+const cookieParser = require('cookie-parser');
+var MemoryStore = require('memorystore')(session);
+const passport = require('passport');
+require('./auth/passportLocal')(passport);
+// require('./auth/googleAuth')(passport);
 
+const app = express();
 //Setting up ejs views
 app.set('view engine', 'ejs');
 
 //Init Middleware
-app.use(express.json({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 
 //Serving static files in express
 app.use(express.static('public'));
 
+app.use(cookieParser(config.get('secret')));
+app.use(
+    session({
+        secret: config.get('secret'),
+        resave: true,
+        saveUninitialized: false,
+        store: new MemoryStore({
+            checkPeriod: 86400000, // prune expired entries every 24h
+        }),
+    })
+);
+
+app.use(passport.initialize());
+app.use(passport.session());
 //Home route
 app.get('/', function (req, res) {
-    res.render('home');
+    res.render('home', {
+        req: req,
+    });
 });
 
 //Define Routes
@@ -31,8 +54,8 @@ let PORT = process.env.PORT || 3000;
 //     console.log('Server is running at port 3000');
 // });
 
-connectDB().then(()=>{
-    app.listen(PORT, ()=>{
-        console.log(`Server started on ${PORT}`)
+connectDB().then(() => {
+    app.listen(PORT, () => {
+        console.log(`Server started on ${PORT}`);
     });
-})
+});
