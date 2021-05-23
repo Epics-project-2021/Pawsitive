@@ -99,4 +99,21 @@ router.get('/logout', (req, res) => {
         res.redirect('/');
     });
 });
+
+//@route GET /auth/google
+//@desc Auth with Google
+//@access Private
+
+router.get('/google', passport.authenticate( 'google', {scope: ['email', 'profile']} ))
+
+//@route GET /auth/google/callback
+//@desc Google auth callback
+//@access Private
+
+router.get('/google/callback', passport.authenticate('google', {
+    failureRedirect: '/'
+}), (req, res)=>{
+    res.redirect('/feed')
+})
+
 module.exports = router;
