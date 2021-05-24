@@ -9,16 +9,18 @@
         </h1>
       </div>
     </div>
+    <!--Hello this is comment-->
     <div class="email_box">
       <div class="input_main">
         <div class="container">
-          <form action="/action_page.php">
+          <form action="/edit/<%= post._id %> " method="POST">
             <div class="form-group">
               <input
                 type="text"
                 class="email-bt"
-                placeholder="Name"
-                name="Name"
+                placeholder="Title"
+                name="title"
+                value="<%= post.title %> "
               />
             </div>
             <div class="form-group">
@@ -26,44 +28,47 @@
                 type="text"
                 class="email-bt"
                 placeholder="Your Phone Number"
-                name="Name"
+                name="phone"
+                value="<%= post.phone %> "
               />
             </div>
-
-            <div class="dropdown">
-              <button class="dropbtn">Requirement</button>
-              <div class="dropdown-content">
-                <a href="#">Food</a>
-                <a href="#">Medication</a>
-                <a href="#">Adoption</a>
-              </div>
-            </div>
+            <select
+              class="form-select form-select-lg"
+              name="selectPickerRequirement"
+            >
+              <option selected>Requirement</option>
+              <option value="food">Food</option>
+              <option value="adoption">Adoption</option>
+              <option value="medication">Medication</option>
+            </select>
             <div class="form-group">
               <textarea
                 style="margin-top: 30px"
                 class="location-bt"
                 placeholder="Area Location"
                 id="location"
-                name="Location"
-              ></textarea>
+                name="area"
+              >
+<%= post.area %></textarea
+              >
             </div>
 
             <div class="form-group">
               <textarea
                 style="margin-top: 10px"
                 class="massage-bt"
-                placeholder="Comment"
+                placeholder="Content"
                 rows="5"
-                id="comment"
-                name="Comment"
-              ></textarea>
+                id="content"
+                name="content"
+              >
+<%= post.content %></textarea
+              >
             </div>
+            <button style="color: white" type="submit" class="btn btn-primary">
+              Submit
+            </button>
           </form>
-        </div>
-        <div class="send_btn">
-          <button type="button" class="main_bt">
-            <a style="color: white" href="#">Send</a>
-          </button>
         </div>
       </div>
     </div>
