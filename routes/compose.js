@@ -42,7 +42,7 @@ router.post('/', async (req, res) => {
                 else {
                     user.posts.push(newPost.id);
                     user.save(function () {
-                        res.redirect('/');
+                        res.redirect('/feed');
                     });
                 }
             });
