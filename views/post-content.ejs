@@ -2,44 +2,55 @@
 <section class="blog-wrapper sect-pt4" id="blog">
     <div class="container">
       <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-8 col-sm-12">
           <div class="post-box">
-            <div class="post-thumb">
-              <img src="img/img.png" class="img-fluid" alt="">
-            </div>
             <div class="post-meta">
-              <h1 class="article-title">Kutta Name</h1>
+              <h1 class="article-title"><%= post.title %> </h1>
               <ul>
-                <li>
+                <li class="list-highlight">
                   <span class="ion-ios-person"></span>
-                  <a href="#">Kutta mei interest rakhne wala</a>
+                  <p class="post-highlight" ><%= post.name %> </p>
                 </li>
-                <li>
+                <li class="list-highlight">
                   <span class="ion-pricetag"></span>
-                  <a href="#">Adoption karna hai ya kya karna hai</a>
+                  <p class="post-highlight"><%= post.requirement %> </p>
                 </li>
+                <% if (post.edited) { %>
+                  <li class="list-highlight">
+                    <span class="ion-pricetag"></span>
+                    <p class="post-highlight">Edited </p>
+                  </li>
+                <% } %>
               </ul>
             </div>
           <div class="entry-content">
-            <img style="margin-bottom: 30px; margin-top: 20px;" src="images/img.jpg" class="img-fluid" alt="">
+            <h6>Location - <%= post.area %> </h6>
+            <img src=<%= post.img %> class="img-fluid content-img" alt="">
             
-            <p>hi, I am kutta, Please adopt me.</p>
-           
-          </div> 
-
+            <p style="font-size: 1.1rem;letter-spacing: 1px;"><%= post.content %> </p>
+            <a class="btn btn-dark" href="/edit/<%= post.id %>">Edit</a>
+          </div>
         </div>
+        
+      </div>
+      <div class="col-md-4 col-sm-12">
+        <form method="POST" action="<%= reqURL %> " style="margin: 10px auto;">
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Comments</label>
+            <textarea name="comment" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          </div>
+          <button type="submit" style="color: white;" class="btn btn-dark">Submit</button>
+          </form>
+          <% post.comments.forEach(comment => { %>
+           <div class="comment-box form-control">
+             <p class="name"><%= comment.username %> </p>
+             <p class="comment"><%= comment.comment %> </p>
+           </div>
+          <% }) %>
       </div>
     </div>
   </section>
-  <!--/ Section Blog-Single End /-->
-<form style="width: 700px; margin: 10px auto;">
 
-  <div class="mb-3">
-    <label for="exampleFormControlTextarea1" class="form-label">Comments</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
-  </div>
-  <button style="color: white;" class="btn btn-dark">Submit</button>
-  </form>
     <footer>
       <div class="container">
         <div class="row">

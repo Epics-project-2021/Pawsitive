@@ -891,3 +891,82 @@ textarea {
   align-items: center;
   flex-direction: column;
 }
+.post-highlight {
+  color: white;
+  text-transform: uppercase;
+  font-size: 20px;
+  margin: 0 auto;
+}
+.list-highlight {
+  background-color: orange;
+  padding: 10px;
+  border-radius: 6px;
+}
+.content-img {
+  margin-bottom: 30px;
+  margin-top: 20px;
+  box-shadow: 0px 0px 20px 0px rgba(255, 165, 0, 0.5);
+  width: 50%;
+}
+.comment-box p {
+  margin: 0;
+  font-size: 14px;
+}
+.comment-box {
+  margin-bottom: 10px;
+}
+.comment-box .name {
+  color: orange;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.developer {
+  margin-top: 700px;
+}
+.lead {
+  font-weight: 400;
+}
+.dev-img {
+  width: 100%;
+  border-radius: 50%;
+  height: 100%;
+}
+.img-container {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 20px;
+}
+.card-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.dev-links i {
+  font-size: 30px;
+}
+.dev-links {
+  padding: 0 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.last-cards {
+  background-color: white;
+  margin: 0 20px;
+  width: 250px;
+}
+.last-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+i {
+  color: grey;
+}
+i:hover {
+  color: orange;
+}
+.card-title {
+  color: grey;
+}

@@ -1,110 +1,54 @@
-<%- include("partials/header-feed");  -%>
-<div>
-    <section id="projects" class="blog-mf sect-pt4 route">
+<%- include("partials/header-feed"); -%>
+<div class="feed">
+  <section id="projects" class="blog-mf sect-pt4 route">
     <div class="container">
       <div class="row">
         <div class="col-sm-12">
           <div class="title-box text-center">
-            <h3 style="margin-left: 42px;" class="title-a">
-              Profile
-            </h3>
+            <h3 style="margin-left: 40px" class="title-a">PROFILE</h3>
+
             <div class="line-mf"></div>
-            
-            <div style="margin-top: 40px;">
-              <a style="margin: 10px 10px; background-color: orange; color: black; border: none;" class="btn btn-dark btn-lg" href="login">Add Post</a>
-              <a style="margin: 10px 10px; color: white; border: none;" class="btn btn-dark btn-lg" href="logout">Logout</a>
-             
-            </div>
           </div>
         </div>
       </div>
       <div class="row">
+        <%posts.forEach(function(post){%>
         <div class="col-md-4">
           <div class="card card-blog">
             <div class="card-img">
-              <a href="#"><img src="img/img.jpg" alt="" class="img-fluid"></a>
+              <a href="/posts/<%=post._id%>"
+                ><img src="<%= post.img %>" alt="" class="img-fluid"
+              /></a>
             </div>
             <div class="card-body">
               <div class="card-category-box">
                 <div class="card-category">
-                  <h6 class="category">Adoption</h6>
+                  <h6 class="category"><%= post.requirement %></h6>
                 </div>
               </div>
-              <h3 class="card-title"><a href="#">TBA</a></h3>
-              <p class="card-description">
-               sfsf
-              </p>
-
+              <div class="">
+                <h3 class="card-title">
+                  <a href="#"><%= post.title %></a>
+                </h3>
+                <p class="card-description card-para">
+                  <%= post.content.substring(0,20)+" . . ." %>
+                </p>
+              </div>
             </div>
             <div class="card-footer">
               <div class="post-author">
-                <a href="#">
-              
-                </a>
+                <p class="card-description card-para"><%= post.name %></p>
+                <p class="card-description card-para">
+                  <%= post.postedOn.toDateString() %>
+                </p>
               </div>
-             </div>
+            </div>
           </div>
         </div>
-                <div class="col-md-4">
-          <div class="card card-blog">
-            <div class="card-img">
-              <a href="#"><img src="img/img.jpg" alt="" class="img-fluid"></a>
-            </div>
-            <div class="card-body">
-              <div class="card-category-box">
-                <div class="card-category">
-                  <h6 class="category">Adoption</h6>
-                </div>
-              </div>
-              <h3 class="card-title"><a href="#">TBA</a></h3>
-              <p class="card-description">
-                fsf
-               
-              </p>
-
-            </div>
-            <div class="card-footer">
-              <div class="post-author">
-                <a href="#">
-
-                </a>
-              </div>
-             </div>
-          </div>
-        </div>
-          <div class="col-md-4">
-          <div class="card card-blog">
-            <div class="card-img">
-              <a href="#"><img src="img/img.jpg" alt="" class="img-fluid"></a>
-            </div>
-            <div class="card-body">
-              <div class="card-category-box">
-                <div class="card-category">
-                  <h6 class="category">Adoption</h6>
-                </div>
-              </div>
-              <h3 class="card-title"><a href="#">TBA</a></h3>
-              <p class="card-description">
-               sfaf
-              </p>
-
-            </div>
-            <div class="card-footer">
-              <div class="post-author">
-                <a href="#">
-                </a>
-              </div>
-                </div>
-          </div>
-        </div>
-    
-          </div>
-        </div>
+        <%}); %>
       </div>
     </div>
   </section>
- 
- 
-  </section>
 </div>
-<%- include("partials/footer");  -%> 
+
+<%- include("partials/footer"); -%>

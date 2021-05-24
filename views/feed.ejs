@@ -43,19 +43,19 @@
         <div class="col-md-4">
           <div class="card card-blog">
             <div class="card-img">
-              <a href="/posts/<%=post._id%>"
+              <a href="/content/<%=post._id%>"
                 ><img src="<%= post.img %>" alt="" class="img-fluid"
               /></a>
             </div>
             <div class="card-body">
               <div class="card-category-box">
                 <div class="card-category">
-                  <h6 class="category">Adoption</h6>
+                  <h6 class="category"><%= post.requirement %></h6>
                 </div>
               </div>
               <div class="">
                 <h3 class="card-title">
-                  <a href="#"><%= post.title %></a>
+                  <a href="/content/<%=post._id%>"><%= post.title %></a>
                 </h3>
                 <p class="card-description card-para">
                   <%= post.content.substring(0,20)+" . . ." %>
