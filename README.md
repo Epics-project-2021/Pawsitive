@@ -36,7 +36,14 @@ Mongo DB       |  [Link](https://www.mongodb.com/cloud/atlas/lp/try2-in?utm_sour
 #### How to Run
 * Fork the repository in your Github Profile
 * Clone it in your local system
+* Make sure you have node installed
 * Install npm
+* Install all dependencies
+
+```bash
+npm install
+```
+* To run the project on your local server, type the following command on console.
 ```bash
 npm run server
 ```
