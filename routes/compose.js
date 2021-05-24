@@ -2,6 +2,9 @@ const express = require("express");
 const router = express.Router();
 const User = require("../database/Models/User");
 const Post = require("../database/Models/Post");
+const upload = require("./multer");
+const cloudinary = require("cloudinary");
+require("./cloudinary");
 //@route GET /compose
 //@desc get compose page
 //@access Private
@@ -23,8 +26,10 @@ router.get("/", async (req, res) => {
 //@route POST /compose
 //@desc Post your posts.
 //@access Private
-router.post("/", async (req, res) => {
+router.post("/", upload.single("img"), async (req, res) => {
   const { title, phone, content, area, selectPickerRequirement } = req.body;
+  const img = await cloudinary.v2.uploader.upload(req.file.path);
+  const img_url = img.secure_url;
   User.findById(req.user.id, function (err, user) {
     if (err) console.log(err);
     if (user) {
@@ -36,6 +41,7 @@ router.post("/", async (req, res) => {
         author: user.id.toString(),
         content: content,
         comments: [],
+        img: img_url,
         requirement: selectPickerRequirement,
       });
       newPost.save(function (err) {

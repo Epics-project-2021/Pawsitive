@@ -15,7 +15,7 @@
     <div class="email_box">
       <div class="input_main">
         <div class="container">
-          <form action="/compose" method="POST">
+          <form action="/compose" method="POST" enctype="multipart/form-data">
             <div class="form-group">
               <input
                 type="text"
@@ -62,14 +62,14 @@
               ></textarea>
             </div>
 
-            <!-- <label for="img">Select image:</label>
-                        <input
-                            class="form-control composeform-text"
-                            type="file"
-                            id="img"
-                            name="img"
-                            accept="image/*"
-                        /> -->
+            <label for="img">Select image:</label>
+            <input
+              class="form-control composeform-text"
+              type="file"
+              id="img"
+              name="img"
+              accept="image/*"
+            />
             <button style="color: white" type="submit" class="btn btn-primary">
               Submit
             </button>
