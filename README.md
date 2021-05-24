@@ -31,3 +31,15 @@ Database
 Database Name | Link                                   
 -----------|-----------------------------------------------
 Mongo DB       |  [Link](https://www.mongodb.com/cloud/atlas/lp/try2-in?utm_source=google&utm_campaign=gs_apac_india_search_core_brand_atlas_desktop&utm_term=mongo%20db&utm_medium=cpc_paid_search&utm_ad=e&utm_ad_campaign_id=12212624347&gclid=Cj0KCQjwna2FBhDPARIsACAEc_XlHtHP5_g94K_2a9W86AwikGhfqiCOR-IOjT43s68TjTuOkSB8INAaAvPqEALw_wcB)
+
+
+#### How to Run
+* Fork the repository in your Github Profile
+* Clone it in your local system
+* Install npm
+```bash
+npm run server
+```
+
+>  NOTE : If Developer Module crashes, please check your Mongo DB link, Google Client and Secret Key in config folder.
+
