@@ -914,6 +914,11 @@ a:hover {
 .card-para {
     margin: 0;
 }
+.feed-btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .card-blog .post-date {
     color: #4e4e4e;

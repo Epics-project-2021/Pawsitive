@@ -8,7 +8,7 @@
                         <h3 class="title-a">FEED</h3>
 
                         <div class="line-mf"></div>
-                        <div style="margin-top: 40px">
+                        <div style="margin-top: 40px" class="feed-btns">
                             <a
                                 style="
                                     margin: 10px 10px;
@@ -20,9 +20,7 @@
                                 href="/compose"
                                 >Add Post</a
                             >
-                        </div>
-                        
-                        <div style="margin-top: 40px">
+
                             <a
                                 style="
                                     margin: 10px 10px;
@@ -31,8 +29,9 @@
                                     border: none;
                                 "
                                 class="btn btn-dark btn-lg"
-                                href="/profile/<% req.user._id%>"
-                                >Go to Profile</a>
+                                href="/profile/<%= req.user._id%>"
+                                >Go to Profile</a
+                            >
                         </div>
                     </div>
                 </div>
