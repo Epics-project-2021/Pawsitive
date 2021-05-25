@@ -1,8 +1,9 @@
 const GoogleStrategy = require('passport-google-oauth20');
 const User = require('../database/Models/User');
 const config = require('config');
-const id = config.get('GOOGLE_CLIENT_ID');
-const secret = config.get('GOOGLE_CLIENT_SECRET');
+const id = process.env.GOOGLE_CLIENT_ID || config.get('GOOGLE_CLIENT_ID');
+const secret =
+    process.env.GOOGLE_CLIENT_SECRET || config.get('GOOGLE_CLIENT_SECRET');
 
 module.exports = function (passport) {
     passport.use(
