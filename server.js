@@ -47,6 +47,7 @@ app.use('/profile', require('./routes/profile'));
 app.use('/content', require('./routes/content'));
 app.use('/compose', require('./routes/compose'));
 app.use('/edit', require('./routes/edit'));
+app.use('/delete', require('./routes/delete'));
 
 //Starting the server
 let PORT = process.env.PORT || 3000;

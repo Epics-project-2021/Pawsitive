@@ -1,83 +1,92 @@
 <%- include("partials/header-feed"); -%>
 <!-- section get in touch start -->
 <div class="touch_section" id="contact">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-12">
-        <h1 class="get_taital">
-          <strong
-            ><span style="color: rgb(0, 0, 0)">DOG IN</span> NEED ?</strong
-          >
-        </h1>
-      </div>
-    </div>
-    <!--Hello this is comment-->
-    <div class="email_box">
-      <div class="input_main">
-        <div class="container">
-          <form action="/compose" method="POST" enctype="multipart/form-data">
-            <div class="form-group">
-              <input
-                type="text"
-                class="email-bt"
-                placeholder="Title"
-                name="title"
-              />
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h1 class="get_taital">
+                    <strong
+                        ><span style="color: rgb(0, 0, 0)">DOG IN</span> NEED
+                        ?</strong
+                    >
+                </h1>
             </div>
-            <div class="form-group">
-              <input
-                type="text"
-                class="email-bt"
-                placeholder="Your Phone Number"
-                name="phone"
-              />
-            </div>
-            <select
-              class="form-select form-select-lg"
-              name="selectPickerRequirement"
-            >
-              <option selected>Requirement</option>
-              <option value="food">Food</option>
-              <option value="adoption">Adoption</option>
-              <option value="medication">Medication</option>
-            </select>
-            <div class="form-group">
-              <textarea
-                style="margin-top: 30px"
-                class="location-bt"
-                placeholder="Area Location"
-                id="location"
-                name="area"
-              ></textarea>
-            </div>
-
-            <div class="form-group">
-              <textarea
-                style="margin-top: 10px"
-                class="massage-bt"
-                placeholder="Content"
-                rows="5"
-                id="content"
-                name="content"
-              ></textarea>
-            </div>
-
-            <label for="img">Select image:</label>
-            <input
-              class="form-control composeform-text"
-              type="file"
-              id="img"
-              name="img"
-              accept="image/*"
-            />
-            <button style="color: white" type="submit" class="btn btn-primary">
-              Submit
-            </button>
-          </form>
         </div>
-      </div>
+        <!--Hello this is comment-->
+        <div class="email_box">
+            <div class="input_main">
+                <div class="container">
+                    <form
+                        action="/compose"
+                        method="POST"
+                        enctype="multipart/form-data"
+                    >
+                        <div class="form-group">
+                            <input
+                                type="text"
+                                class="email-bt"
+                                placeholder="Title"
+                                name="title"
+                            />
+                        </div>
+                        <div class="form-group">
+                            <input
+                                type="text"
+                                class="email-bt"
+                                placeholder="Your Phone Number"
+                                name="phone"
+                            />
+                        </div>
+                        <select
+                            class="form-select form-select-lg"
+                            name="selectPickerRequirement"
+                        >
+                            <option selected>Requirement</option>
+                            <option value="food">Food</option>
+                            <option value="adoption">Adoption</option>
+                            <option value="medication">Medication</option>
+                        </select>
+                        <div class="form-group">
+                            <textarea
+                                style="margin-top: 30px"
+                                class="location-bt"
+                                placeholder="Area Location"
+                                id="location"
+                                name="area"
+                            ></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <textarea
+                                style="margin-top: 10px"
+                                class="massage-bt"
+                                placeholder="Content"
+                                rows="5"
+                                id="content"
+                                name="content"
+                            ></textarea>
+                        </div>
+
+                        <label for="img">Select image:</label>
+                        <input
+                            class="form-control composeform-text"
+                            type="file"
+                            id="img"
+                            name="img"
+                            accept="image/*"
+                        />
+                        <button
+                            style="color: white; margin-top: 10px"
+                            type="submit"
+                            class="btn btn-primary"
+                        >
+                            Submit
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
 </div>
 
 <!-- section get in touch end -->
