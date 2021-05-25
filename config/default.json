@@ -1,9 +1,9 @@
 {
-    "mongoURI": "Your database link",
-    "secret": "your secret",
-    "GOOGLE_CLIENT_ID": "Your google client id",
-    "GOOGLE_CLIENT_SECRET": "Your google client secret",
-    "CLOUD_NAME" : "cloudinary cloud name",
-    "CLOUD_API_ID" : "cloudinary api id",
-    "CLOUD_API_SERVER" : "cloudinary api server"
+    "mongoURI": "mongodb+srv://abhaygupta15153986:abhaygupta15153986@cluster0.yctic.mongodb.net/Pawsitive?retryWrites=true&w=majority",
+    "secret": "SECRET=Gitaisthewisdom",
+    "GOOGLE_CLIENT_ID": "835563235598-qonmg5chev9pe18l3sj1eerkddjg9o9a.apps.googleusercontent.com",
+    "GOOGLE_CLIENT_SECRET": "lq3UM5pdKYf-dxtJfrypqtA9",
+    "CLOUD_NAME": "pawsitive-plus",
+    "CLOUD_API_ID": "639816224239714",
+    "CLOUD_API_SERVER": "3oa2APnmw16zt99W_JELPSw_lPo"
 }
