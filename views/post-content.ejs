@@ -46,7 +46,7 @@
         <form method="POST" action="<%= reqURL %> " style="margin: 10px auto;">
           <div class="mb-3">
             <label for="exampleFormControlTextarea1" class="form-label">Comments</label>
-            <textarea name="comment" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            <textarea style=" border: 1px solid orange;" name="comment" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
           </div>
           <button type="submit" style="color: white;" class="btn btn-dark">Submit</button>
           </form>
@@ -54,9 +54,8 @@
            <div class="comment-box form-control">
              <p class="name"><%= comment.username %> </p>
              <p class="comment"><%= comment.comment %> </p>
-             <% if(req.isAuthenticated()&&req.user._id.toString()===comment.userid){ %> 
+             <% if(req.isAuthenticated()&&(req.user._id.toString()===comment.userid || req.user._id.toString()===post.author)){ %> 
               <a href="/delete/<%=post._id %>/<%=comment.id %>"> <i class="fas fa-trash"></i></a>
-            
              <% } %> 
             </div>
           <% }) %>

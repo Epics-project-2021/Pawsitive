@@ -30,7 +30,6 @@ router.get('/:id', async (req, res) => {
                 )
             )
                 .then((posts) => {
-                    console.log(posts);
                     res.render('profile', {
                         posts: posts.sort(compare),
                         req: req,

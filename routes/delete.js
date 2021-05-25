@@ -7,7 +7,6 @@ const User = require('../database/Models/User');
 //@access Private
 router.post('/:postId', (req, res) => {
     const postId = req.params.postId;
-    const user = req.user;
     User.findOneAndUpdate(
         { _id: req.user.id },
         {
@@ -25,7 +24,7 @@ router.post('/:postId', (req, res) => {
         if (err) {
             console.log(err);
         } else {
-            res.redirect('/feed');
+            res.redirect('/profile/' + req.user.id);
         }
     });
 });
@@ -49,7 +48,7 @@ router.get('/:postId/:commentId', (req, res) => {
         (err) => {
             if (err) console.log(err);
             else {
-                res.redirect('/feed');
+                res.redirect('/content/' + postId);
             }
         }
     );

@@ -896,6 +896,21 @@ textarea {
     font-size: 16px;
     margin: 0 auto;
 }
+
+.form-control,
+input,
+textarea,
+select {
+    border: 1px solid orange !important;
+}
+input:focus,
+select:focus,
+textarea:focus,
+.email_box {
+    box-shadow: 0px 0px 20px 0px rgba(255, 165, 0, 0.5) !important;
+    outline: none;
+}
+
 .list-highlight {
     background-color: orange;
     padding: 10px;
@@ -906,6 +921,7 @@ textarea {
     right: 10px;
     bottom: 10px;
 }
+
 .edit-btn {
     width: 150px;
     display: flex;
