@@ -25,10 +25,19 @@
             </div>
           <div class="entry-content">
             <h6>Location - <%= post.area %> </h6>
+            <h6>Contact No. - <%= post.phone %> </h6>
             <img src=<%= post.img %> class="img-fluid content-img" alt="">
             
             <p style="font-size: 1.1rem;letter-spacing: 1px;"><%= post.content %> </p>
+            
+            <% if(req.isAuthenticated()&&req.user._id.toString()===post.author){ %> 
+            <div class="edit-btn">
             <a class="btn btn-dark" href="/edit/<%= post.id %>">Edit</a>
+            <form action="/delete/<%= post.id %>" method="POST">
+            <button style="margin-left: 10px;" class="btn btn-warning" type="submit">Delete</button>
+           </form>
+          </div>
+            <%}%>
           </div>
         </div>
         
@@ -45,7 +54,11 @@
            <div class="comment-box form-control">
              <p class="name"><%= comment.username %> </p>
              <p class="comment"><%= comment.comment %> </p>
-           </div>
+             <% if(req.isAuthenticated()&&req.user._id.toString()===comment.userid){ %> 
+              <a href="/delete/<%=post._id %>/<%=comment.id %>"> <i class="fas fa-trash"></i></a>
+            
+             <% } %> 
+            </div>
           <% }) %>
       </div>
     </div>

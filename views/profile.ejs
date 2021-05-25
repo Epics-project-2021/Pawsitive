@@ -1,54 +1,71 @@
 <%- include("partials/header-feed"); -%>
 <div class="feed">
-  <section id="projects" class="blog-mf sect-pt4 route">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-12">
-          <div class="title-box text-center">
-            <h3 style="margin-left: 40px" class="title-a">PROFILE</h3>
+    <section id="projects" class="blog-mf sect-pt4 route">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="title-box text-center">
+                        <h3 style="margin-left: 40px" class="title-a">
+                            PROFILE
+                        </h3>
 
-            <div class="line-mf"></div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <%posts.forEach(function(post){%>
-        <div class="col-md-4">
-          <div class="card card-blog">
-            <div class="card-img">
-              <a href="/posts/<%=post._id%>"
-                ><img src="<%= post.img %>" alt="" class="img-fluid"
-              /></a>
-            </div>
-            <div class="card-body">
-              <div class="card-category-box">
-                <div class="card-category">
-                  <h6 class="category"><%= post.requirement %></h6>
+                        <div class="line-mf"></div>
+                    </div>
                 </div>
-              </div>
-              <div class="">
-                <h3 class="card-title">
-                  <a href="#"><%= post.title %></a>
-                </h3>
-                <p class="card-description card-para">
-                  <%= post.content.substring(0,20)+" . . ." %>
-                </p>
-              </div>
             </div>
-            <div class="card-footer">
-              <div class="post-author">
-                <p class="card-description card-para"><%= post.name %></p>
-                <p class="card-description card-para">
-                  <%= post.postedOn.toDateString() %>
-                </p>
-              </div>
+            <div class="row">
+                <% if(posts.length==0){ %>
+                <img
+                    style="width: 800px; margin: 0 auto"
+                    src="/images/empty.svg"
+                    alt=""
+                />
+                <%}%> <%posts.forEach(function(post){%>
+                <div class="col-md-4">
+                    <div class="card card-blog">
+                        <div class="card-img">
+                            <a href="/posts/<%=post._id%>"
+                                ><img
+                                    src="<%= post.img %>"
+                                    alt=""
+                                    class="img-fluid"
+                            /></a>
+                        </div>
+                        <div class="card-body">
+                            <div class="card-category-box">
+                                <div class="card-category">
+                                    <h6 class="category">
+                                        <%= post.requirement %>
+                                    </h6>
+                                </div>
+                            </div>
+                            <div class="">
+                                <h3 class="card-title">
+                                    <a href="#"><%= post.title %></a>
+                                </h3>
+                                <p class="card-description card-para">
+                                    <%=
+                                    post.content.length>20?post.content.substring(0,20)+"...":post.content%>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="post-author">
+                                <p class="card-description card-para">
+                                    <%=
+                                    post.name.length>15?post.name.substring(0,15)+"...":post.name%>
+                                </p>
+                                <p class="card-description card-para">
+                                    <%= post.postedOn.toDateString() %>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <%}); %>
             </div>
-          </div>
         </div>
-        <%}); %>
-      </div>
-    </div>
-  </section>
+    </section>
 </div>
 
 <%- include("partials/footer"); -%>
