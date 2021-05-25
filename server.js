@@ -19,10 +19,11 @@ app.use(express.urlencoded({ extended: true }));
 //Serving static files in express
 app.use(express.static('public'));
 
-app.use(cookieParser(config.get('secret')));
+const secret = process.env.SECRET || config.get('secret');
+app.use(cookieParser(secret));
 app.use(
     session({
-        secret: config.get('secret'),
+        secret: secret,
         resave: true,
         saveUninitialized: false,
         store: new MemoryStore({
