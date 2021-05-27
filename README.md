@@ -37,13 +37,13 @@ Mongo DB       |  [Link](https://www.mongodb.com/cloud/atlas/lp/try2-in?utm_sour
 
 # Screenshots
 * Home Page
-![](https://github.com/Epics-project-2021/Pawsitive/blob/master/public/images/homepage.jpg)
+![](https://github.com/Epics-project-2021/Pawsitive/blob/master/public/images/homepage.png)
 
 * Feed
-![](https://github.com/Epics-project-2021/Pawsitive/blob/master/public/images/feed.jpg)
+![](https://github.com/Epics-project-2021/Pawsitive/blob/master/public/images/feed.png)
 
 * Compose
-![](https://github.com/Epics-project-2021/Pawsitive/blob/master/public/images/compose.jpg)
+![](https://github.com/Epics-project-2021/Pawsitive/blob/master/public/images/compose.png)
 
 
 #### How to Run
